@@ -1,4 +1,5 @@
 import Button from "components/Button";
+import SearchBar from "components/SearchBar";
 
 function Header({ logoUrl, title, shopUrl, cartUrl }) {
   function onClick(url) {
@@ -10,6 +11,7 @@ function Header({ logoUrl, title, shopUrl, cartUrl }) {
       <header>
         <img src={logoUrl} alt="logo" />
         <p>{title}</p>
+        <SearchBar id={"search"} />
         <Button
           name={"Shop"}
           onClick={() => {
