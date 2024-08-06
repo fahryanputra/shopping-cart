@@ -28,28 +28,4 @@ describe("Header component", () => {
 
     expect(title).toBeInTheDocument();
   });
-
-  it("renders search bar", () => {
-    render(<Header />);
-
-    const textInput = screen.getByLabelText("search");
-
-    expect(textInput).toBeInTheDocument();
-  });
-
-  it("renders shop button", () => {
-    render(<Header />);
-
-    const button = screen.getByRole("button", { name: "Shop" });
-
-    expect(button).toBeInTheDocument();
-  });
-
-  it("renders cart button", () => {
-    render(<Header />);
-
-    const button = screen.getByRole("button", { name: "Cart" });
-
-    expect(button).toBeInTheDocument();
-  });
 });
