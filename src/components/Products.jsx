@@ -13,6 +13,7 @@ function Products() {
         <Card
           key={product.id}
           imgUrl={product.image}
+          productId={product.id}
           productName={product.title}
           productPrice={product.price}
         />
