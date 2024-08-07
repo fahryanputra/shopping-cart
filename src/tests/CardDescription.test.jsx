@@ -4,18 +4,18 @@ import CardDescription from "components/CardDescription";
 
 describe("Card description component", () => {
   it("renders item name", () => {
-    render(<CardDescription itemName={"item name"} />);
+    render(<CardDescription productName={"item name"} />);
 
-    const itemName = screen.getByText("item name");
+    const productName = screen.getByText("item name");
 
-    expect(itemName).toBeInTheDocument();
+    expect(productName).toBeInTheDocument();
   });
 
   it("renders item price", () => {
-    render(<CardDescription itemPrice={"2000"} />);
+    render(<CardDescription productPrice={"2000"} />);
 
-    const itemPrice = screen.getByText("2000");
+    const productPrice = screen.getByText("$2000");
 
-    expect(itemPrice).toBeInTheDocument();
+    expect(productPrice).toBeInTheDocument();
   });
 });

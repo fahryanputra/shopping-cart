@@ -1,5 +1,5 @@
 import Banner from "components/Banner";
-import Items from "components/Items";
+import Products from "components/Products";
 
 function Content() {
   return (
@@ -8,7 +8,7 @@ function Content() {
         <Banner imgUrl={"#"} />
       </div>
       <div>
-        <Items />
+        <Products />
       </div>
     </>
   );

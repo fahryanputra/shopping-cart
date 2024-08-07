@@ -1,6 +1,6 @@
 import CardDescription from "components/CardDescription";
 
-function Card({ imgUrl, itemName, itemPrice }) {
+function Card({ imgUrl, productName, productPrice }) {
   return (
     <>
       <div>
@@ -8,7 +8,10 @@ function Card({ imgUrl, itemName, itemPrice }) {
           <img src={imgUrl} alt="cardImage" />
         </div>
         <div>
-          <CardDescription itemName={itemName} itemPrice={itemPrice} />
+          <CardDescription
+            productName={productName}
+            productPrice={productPrice}
+          />
         </div>
       </div>
     </>

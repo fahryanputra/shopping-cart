@@ -1,9 +1,9 @@
-function CardDescription({ itemName, itemPrice }) {
+function CardDescription({ productName, productPrice }) {
   return (
     <>
       <div>
-        <p>{itemName}</p>
-        <p>{itemPrice}</p>
+        <p>{productName}</p>
+        <p>{`$${productPrice}`}</p>
       </div>
     </>
   );
