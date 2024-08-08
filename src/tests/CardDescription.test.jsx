@@ -18,4 +18,12 @@ describe("Card description component", () => {
 
     expect(productPrice).toBeInTheDocument();
   });
+
+  it("renders cart button", () => {
+    render(<CardDescription />);
+
+    const button = screen.getByRole("button");
+
+    expect(button).toBeInTheDocument();
+  });
 });

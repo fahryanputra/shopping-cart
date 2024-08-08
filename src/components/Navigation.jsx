@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import SearchBar from "components/SearchBar";
 
-function Navigation({ shopUrl, cartUrl }) {
+function Navigation({ shopUrl, cartUrl, setSearchValue }) {
   function onClick(url) {
     return console.log(url);
   }
@@ -9,13 +9,7 @@ function Navigation({ shopUrl, cartUrl }) {
   return (
     <>
       <div>
-        <SearchBar id={"search"} />
-        <Button
-          name={"Search"}
-          onClick={() => {
-            onClick("do search");
-          }}
-        />
+        <SearchBar id={"search"} setSearchValue={setSearchValue} />
       </div>
       <div>
         <Button

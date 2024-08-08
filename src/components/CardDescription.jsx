@@ -1,8 +1,17 @@
 import Button from "components/Button";
+import { useState } from "react";
 
 function CardDescription({ productId, productName, productPrice }) {
+  const [toggleCartButton, setToggleCartButton] = useState(true);
+
   function onClick() {
-    return console.log(`buy product id: ${productId}`);
+    setToggleCartButton(!toggleCartButton);
+
+    if (toggleCartButton) {
+      return console.log(`Add product ${productId} to cart`);
+    } else {
+      return console.log(`Remove product ${productId} from cart`);
+    }
   }
 
   return (
@@ -10,8 +19,10 @@ function CardDescription({ productId, productName, productPrice }) {
       <div>
         <p>{productName}</p>
         <p>{`$${productPrice}`}</p>
+      </div>
+      <div>
         <Button
-          name={"buy"}
+          name={toggleCartButton ? "Add to Cart" : "Remove from Cart"}
           onClick={() => {
             onClick();
           }}
