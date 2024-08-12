@@ -1,6 +1,6 @@
 import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Navigation from "components/Navigation";
+import Navigation from "components/pages/shop/Navigation";
 
 describe("Navigation component", () => {
   it("renders search bar", () => {

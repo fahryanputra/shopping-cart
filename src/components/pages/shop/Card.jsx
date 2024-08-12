@@ -1,4 +1,4 @@
-import CardDescription from "components/CardDescription";
+import CardDescription from "components/pages/shop/CardDescription";
 
 function Card({ imgUrl, productId, productName, productPrice }) {
   return (

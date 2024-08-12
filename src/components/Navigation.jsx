@@ -1,29 +1,19 @@
-import Button from "components/Button";
-import SearchBar from "components/SearchBar";
+import SearchBar from "components/pages/shop/SearchBar";
+import { Link, useLocation } from "react-router-dom";
 
-function Navigation({ shopUrl, cartUrl, setSearchValue }) {
-  function onClick(url) {
-    return console.log(url);
-  }
+function Navigation({ setSearchValue }) {
+  const location = useLocation().pathname;
 
   return (
     <>
       <div>
-        <SearchBar id={"search"} setSearchValue={setSearchValue} />
+        {location === "/" && (
+          <SearchBar id={"search"} setSearchValue={setSearchValue} />
+        )}
       </div>
       <div>
-        <Button
-          name={"Shop"}
-          onClick={() => {
-            onClick(shopUrl);
-          }}
-        />
-        <Button
-          name={"Cart"}
-          onClick={() => {
-            onClick(cartUrl);
-          }}
-        />
+        <Link to="/">Shop</Link>
+        <Link to="cart">Cart</Link>
       </div>
     </>
   );

@@ -16,6 +16,7 @@ export default defineConfig({
       styles: "/src/styles",
       hooks: "/src/hooks",
       utilities: "/src/utilities",
+      routes: "/src/routes",
       tests: "/src/tests",
     },
   },

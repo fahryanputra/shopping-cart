@@ -1,5 +1,5 @@
-import Banner from "components/Banner";
-import Products from "components/Products";
+import Banner from "components/pages/shop/Banner";
+import Products from "components/pages/shop/Products";
 
 function Content({ searchValue }) {
   return (

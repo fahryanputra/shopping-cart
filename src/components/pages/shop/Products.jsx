@@ -1,4 +1,4 @@
-import Card from "components/Card";
+import Card from "components/pages/shop/Card";
 import useFakeStoreAPI from "hooks/useFakeStoreAPI";
 
 function Products({ searchValue }) {

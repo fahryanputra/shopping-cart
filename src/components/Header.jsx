@@ -1,19 +1,15 @@
 import Navigation from "components/Navigation";
 
-function Header({ logoUrl, title, shopUrl, cartUrl, setSearchValue }) {
+function Header({ setSearchValue }) {
   return (
     <>
       <header>
         <div>
-          <img src={logoUrl} alt="logo" />
-          <p>{title}</p>
+          <img src="#" alt="logo" />
+          <p>Shopping Cart</p>
         </div>
         <div>
-          <Navigation
-            shopUrl={shopUrl}
-            cartUrl={cartUrl}
-            setSearchValue={setSearchValue}
-          />
+          <Navigation setSearchValue={setSearchValue} />
         </div>
       </header>
     </>
