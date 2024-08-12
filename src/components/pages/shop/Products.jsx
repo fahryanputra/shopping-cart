@@ -3,15 +3,7 @@ import useFakeStoreAPI from "hooks/useFakeStoreAPI";
 
 function Products({ searchValue }) {
   function displayProductCard(product) {
-    return (
-      <Card
-        key={product.id}
-        imgUrl={product.image}
-        productId={product.id}
-        productName={product.title}
-        productPrice={product.price}
-      />
-    );
+    return <Card key={product.id} imgUrl={product.image} product={product} />;
   }
 
   const { products, error, loading } = useFakeStoreAPI();

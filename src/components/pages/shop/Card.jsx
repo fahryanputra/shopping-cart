@@ -1,6 +1,6 @@
 import CardDescription from "components/pages/shop/CardDescription";
 
-function Card({ imgUrl, productId, productName, productPrice }) {
+function Card({ imgUrl, product }) {
   return (
     <>
       <div>
@@ -8,11 +8,7 @@ function Card({ imgUrl, productId, productName, productPrice }) {
           <img src={imgUrl} alt="cardImage" />
         </div>
         <div>
-          <CardDescription
-            productId={productId}
-            productName={productName}
-            productPrice={productPrice}
-          />
+          <CardDescription product={product} />
         </div>
       </div>
     </>

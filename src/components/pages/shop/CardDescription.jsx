@@ -1,24 +1,27 @@
 import Button from "components/Button";
+import { addToCart, removeFromCart } from "utilities/shoppingCart";
 import { useState } from "react";
 
-function CardDescription({ productId, productName, productPrice }) {
+function CardDescription({ product }) {
   const [toggleCartButton, setToggleCartButton] = useState(true);
 
   function onClick() {
     setToggleCartButton(!toggleCartButton);
 
     if (toggleCartButton) {
-      return console.log(`Add product ${productId} to cart`);
+      addToCart(product);
+      return console.log(`Add product ${product.id} to cart`);
     } else {
-      return console.log(`Remove product ${productId} from cart`);
+      removeFromCart(product);
+      return console.log(`Remove product ${product.id} from cart`);
     }
   }
 
   return (
     <>
       <div>
-        <p>{productName}</p>
-        <p>{`$${productPrice}`}</p>
+        <p>{product.title}</p>
+        <p>{`$${product.price}`}</p>
       </div>
       <div>
         <Button
