@@ -1,5 +1,6 @@
 import Card from "components/pages/shop/Card";
 import useFakeStoreAPI from "hooks/useFakeStoreAPI";
+import { useState } from "react";
 
 function Products({ searchValue }) {
   function displayProductCard(product) {

@@ -1,19 +1,29 @@
 import Button from "components/Button";
-import { addToCart, removeFromCart } from "utilities/shoppingCart";
 import { useState } from "react";
 
 function CardDescription({ product }) {
-  const [toggleCartButton, setToggleCartButton] = useState(true);
+  const isStorageEmpty = localStorage.length < 1;
+  const isProductInStorage = localStorage.getItem(product.id);
+
+  const [toggleCartButton, setToggleCartButton] = useState(
+    isStorageEmpty ? true : !isProductInStorage
+  );
+
+  function addToStorage(product) {
+    localStorage.setItem(product.id, JSON.stringify(product));
+  }
+
+  function removeFromStorage(product) {
+    localStorage.removeItem(product.id);
+  }
 
   function onClick() {
     setToggleCartButton(!toggleCartButton);
 
     if (toggleCartButton) {
-      addToCart(product);
-      return console.log(`Add product ${product.id} to cart`);
+      addToStorage(product);
     } else {
-      removeFromCart(product);
-      return console.log(`Remove product ${product.id} from cart`);
+      removeFromStorage(product);
     }
   }
 
