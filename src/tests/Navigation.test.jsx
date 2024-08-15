@@ -1,6 +1,6 @@
 import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Navigation from "components/pages/shop/Navigation";
+import Navigation from "components/Navigation";
 
 describe("Navigation component", () => {
   it("renders search bar", () => {
@@ -11,19 +11,19 @@ describe("Navigation component", () => {
     expect(textInput).toBeInTheDocument();
   });
 
-  it("renders shop button", () => {
+  it("renders shop link", () => {
     render(<Navigation />);
 
-    const button = screen.getByRole("button", { name: "Shop" });
+    const shopText = screen.getByText("Shop");
 
-    expect(button).toBeInTheDocument();
+    expect(shopText).toBeInTheDocument();
   });
 
-  it("renders cart button", () => {
+  it("renders cart link", () => {
     render(<Navigation />);
 
-    const button = screen.getByRole("button", { name: "Cart" });
+    const cartText = screen.getByText("Cart");
 
-    expect(button).toBeInTheDocument();
+    expect(cartText).toBeInTheDocument();
   });
 });

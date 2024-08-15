@@ -1,12 +1,12 @@
 import Navigation from "components/Navigation";
 
-function Header({ setSearchValue }) {
+function Header({ title, setSearchValue }) {
   return (
     <>
       <header>
         <div>
           <img src="#" alt="logo" />
-          <p>Shopping Cart</p>
+          <p>{title}</p>
         </div>
         <div>
           <Navigation setSearchValue={setSearchValue} />

@@ -10,11 +10,11 @@ function CardDescription({ product }) {
   );
 
   function addToStorage(product) {
-    localStorage.setItem(product.id, JSON.stringify(product));
+    return localStorage.setItem(product.id, JSON.stringify(product));
   }
 
   function removeFromStorage(product) {
-    localStorage.removeItem(product.id);
+    return !isStorageEmpty && localStorage.removeItem(product.id);
   }
 
   function onClick() {
@@ -25,6 +25,8 @@ function CardDescription({ product }) {
     } else {
       removeFromStorage(product);
     }
+
+    console.log(localStorage);
   }
 
   return (

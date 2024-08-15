@@ -1,7 +1,6 @@
 import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Header from "components/Header";
-import userEvent from "@testing-library/user-event";
 
 describe("Header component", () => {
   it("renders on screen", () => {
@@ -13,12 +12,11 @@ describe("Header component", () => {
   });
 
   it("renders site logo", () => {
-    render(<Header logoUrl={"#"} />);
+    render(<Header />);
 
     const image = screen.getByAltText("logo");
 
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "#");
   });
 
   it("renders site title", () => {

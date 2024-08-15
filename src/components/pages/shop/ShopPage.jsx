@@ -7,7 +7,7 @@ function ShopPage() {
 
   return (
     <>
-      <Header setSearchValue={setSearchValue} />
+      <Header title={"Ciplun's Shop"} setSearchValue={setSearchValue} />
       <Content searchValue={searchValue} />
     </>
   );
