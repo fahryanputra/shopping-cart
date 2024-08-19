@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import QuantityInput from "./QuantityInput";
 
-function Card({ productId, onCalculateTotal }) {
+function Card({ productId, onCalculateTotal, onRemove }) {
   const product = getProductFromStorage(productId);
   const [productQuantity, setProductQuantity] = useState(
     product.quantity ? product.quantity : 1
@@ -26,6 +26,11 @@ function Card({ productId, onCalculateTotal }) {
     return localStorage.setItem(key, JSON.stringify(object));
   }
 
+  function handleRemove() {
+    localStorage.getItem(productId) && localStorage.removeItem(productId);
+    onRemove();
+  }
+
   return (
     <>
       <img src={product.image} alt={product.title} />
@@ -34,9 +39,9 @@ function Card({ productId, onCalculateTotal }) {
       <div>
         <p>Quantity</p>
         <QuantityInput
-          product={product}
           productQuantity={productQuantity}
           setProductQuantity={setProductQuantity}
+          onRemove={handleRemove}
         />
       </div>
       <div>

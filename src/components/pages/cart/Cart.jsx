@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import Button from "components/Button";
 
 function Cart() {
   const [totalBill, setTotalBill] = useState(calculateTotalBill());
   const isStorageEmpty = localStorage.length < 1;
+  const [, forceRender] = useState(undefined);
 
   function getProductFromStorage(key) {
     return JSON.parse(localStorage.getItem(key));
@@ -24,6 +25,11 @@ function Cart() {
     setTotalBill(calculateTotalBill());
   }
 
+  function handleRemove() {
+    handleCalculateTotal();
+    forceRender((prev) => !prev);
+  }
+
   return (
     <>
       <div>
@@ -33,6 +39,7 @@ function Cart() {
               key={element}
               productId={element}
               onCalculateTotal={handleCalculateTotal}
+              onRemove={handleRemove}
             />
           ))}
       </div>

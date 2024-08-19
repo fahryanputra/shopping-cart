@@ -25,8 +25,6 @@ function CardDescription({ product }) {
     } else {
       removeFromStorage(product);
     }
-
-    console.log(localStorage);
   }
 
   return (

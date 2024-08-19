@@ -1,29 +1,31 @@
 import Button from "components/Button";
 
-function QuantityInput({ productQuantity, setProductQuantity }) {
+function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
   function handleAdd() {
-    setProductQuantity(productQuantity + 1);
+    return setProductQuantity(productQuantity + 1);
   }
 
   function handleSubtract() {
-    if (productQuantity > 0) {
-      setProductQuantity(productQuantity - 1);
-    }
+    return productQuantity > 1 && setProductQuantity(productQuantity - 1);
   }
 
   function handleChange(event) {
-    !event.target.value
+    return !event.target.value
       ? setProductQuantity(0)
       : setProductQuantity(event.target.value.replace(/^0/, ""));
   }
 
   return (
     <>
-      <Button name={"-"} onClick={handleSubtract} />
+      {productQuantity > 1 ? (
+        <Button name={"-"} onClick={handleSubtract} />
+      ) : (
+        <Button name={"x"} onClick={onRemove} />
+      )}
       <input
         type="number"
         value={productQuantity}
-        min={0}
+        min={1}
         step={1}
         onChange={handleChange}
       />
