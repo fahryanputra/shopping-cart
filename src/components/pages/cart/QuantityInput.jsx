@@ -2,11 +2,11 @@ import Button from "components/Button";
 
 function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
   function handleAdd() {
-    return setProductQuantity(productQuantity + 1);
+    return setProductQuantity(+productQuantity + 1);
   }
 
   function handleSubtract() {
-    return productQuantity > 1 && setProductQuantity(productQuantity - 1);
+    return productQuantity > 1 && setProductQuantity(+productQuantity - 1);
   }
 
   function handleChange(event) {
