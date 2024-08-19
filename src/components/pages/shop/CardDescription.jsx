@@ -1,5 +1,6 @@
 import Button from "components/Button";
 import { useState } from "react";
+import { addToStorage, removeFromStorage } from "utilities/storageUtilities";
 
 function CardDescription({ product }) {
   const isStorageEmpty = localStorage.length < 1;
@@ -9,21 +10,13 @@ function CardDescription({ product }) {
     isStorageEmpty ? true : !isProductInStorage
   );
 
-  function addToStorage(product) {
-    return localStorage.setItem(product.id, JSON.stringify(product));
-  }
-
-  function removeFromStorage(product) {
-    return !isStorageEmpty && localStorage.removeItem(product.id);
-  }
-
   function onClick() {
     setToggleCartButton(!toggleCartButton);
 
     if (toggleCartButton) {
-      addToStorage(product);
+      addToStorage(product.id, product);
     } else {
-      removeFromStorage(product);
+      removeFromStorage(product.id);
     }
   }
 

@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import QuantityInput from "./QuantityInput";
+import Button from "components/Button";
+import {
+  addToStorage,
+  getFromStorage,
+  removeFromStorage,
+} from "utilities/storageUtilities";
 
 function Card({ productId, onCalculateTotal, onRemove }) {
-  const product = getProductFromStorage(productId);
+  const product = getFromStorage(productId);
   const [productQuantity, setProductQuantity] = useState(
     product.quantity ? product.quantity : 1
   );
@@ -14,20 +20,12 @@ function Card({ productId, onCalculateTotal, onRemove }) {
     setTotalPrice(totalPrice);
     product.quantity = productQuantity;
     product.total = totalPrice;
-    storeProductToStorage(productId, product);
+    addToStorage(productId, product);
     onCalculateTotal();
   }, [productQuantity]);
 
-  function getProductFromStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
-  }
-
-  function storeProductToStorage(key, object) {
-    return localStorage.setItem(key, JSON.stringify(object));
-  }
-
   function handleRemove() {
-    localStorage.getItem(productId) && localStorage.removeItem(productId);
+    removeFromStorage(productId);
     onRemove();
   }
 
@@ -43,6 +41,7 @@ function Card({ productId, onCalculateTotal, onRemove }) {
           setProductQuantity={setProductQuantity}
           onRemove={handleRemove}
         />
+        <Button name={"remove"} onClick={handleRemove} />
       </div>
       <div>
         <p>{`$${totalPrice.toFixed(2)}`}</p>

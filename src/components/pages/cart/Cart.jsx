@@ -1,28 +1,15 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import Button from "components/Button";
+import { totalPriceFromStorage } from "utilities/storageUtilities";
 
 function Cart() {
-  const [totalBill, setTotalBill] = useState(calculateTotalBill());
-  const isStorageEmpty = localStorage.length < 1;
+  const [totalBill, setTotalBill] = useState(totalPriceFromStorage());
   const [, forceRender] = useState(undefined);
-
-  function getProductFromStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
-  }
-
-  function calculateTotalBill() {
-    let totalBill = 0;
-
-    Object.keys(localStorage).map(
-      (element) => (totalBill += getProductFromStorage(element).total)
-    );
-
-    return totalBill;
-  }
+  const isStorageEmpty = localStorage.length < 1;
 
   function handleCalculateTotal() {
-    setTotalBill(calculateTotalBill());
+    setTotalBill(totalPriceFromStorage());
   }
 
   function handleRemove() {
