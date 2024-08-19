@@ -13,7 +13,7 @@ function Navigation({ setSearchValue }) {
       </div>
       <div>
         <Link to="/">Shop</Link>
-        <Link to="cart">Cart</Link>
+        <Link to="/cart">Cart</Link>
       </div>
     </>
   );
