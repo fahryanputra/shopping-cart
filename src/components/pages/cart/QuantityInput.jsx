@@ -6,7 +6,7 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
   }
 
   function handleSubtract() {
-    return productQuantity > 1 && setProductQuantity(+productQuantity - 1);
+    return productQuantity > 0 && setProductQuantity(+productQuantity - 1);
   }
 
   function handleChange(event) {
@@ -17,7 +17,7 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
 
   return (
     <>
-      {productQuantity > 1 ? (
+      {productQuantity > 0 ? (
         <Button name={"-"} onClick={handleSubtract} />
       ) : (
         <Button name={"x"} onClick={onRemove} />
@@ -25,7 +25,7 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
       <input
         type="number"
         value={productQuantity}
-        min={1}
+        min={0}
         step={1}
         onChange={handleChange}
       />

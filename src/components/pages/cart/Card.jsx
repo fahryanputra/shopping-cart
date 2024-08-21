@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import QuantityInput from "./QuantityInput";
 import Button from "components/Button";
 import {
-  addToStorage,
+  addQuantityAndTotalPrice,
   getFromStorage,
   removeFromStorage,
 } from "utilities/storageUtilities";
@@ -18,9 +18,7 @@ function Card({ productId, onCalculateTotal, onRemove }) {
     const totalPrice = productQuantity * product.price;
 
     setTotalPrice(totalPrice);
-    product.quantity = productQuantity;
-    product.total = totalPrice;
-    addToStorage(productId, product);
+    addQuantityAndTotalPrice(productId, product, productQuantity, totalPrice);
     onCalculateTotal();
   }, [productQuantity]);
 

@@ -1,6 +1,7 @@
 import Button from "components/Button";
 import { useState } from "react";
 import { addToStorage, removeFromStorage } from "utilities/storageUtilities";
+import styles from "styles/cardDescription.module.css";
 
 function CardDescription({ product }) {
   const isStorageEmpty = localStorage.length < 1;
@@ -22,11 +23,11 @@ function CardDescription({ product }) {
 
   return (
     <>
-      <div>
-        <p>{product.title}</p>
-        <p>{`$${product.price}`}</p>
+      <div className={styles.container}>
+        <p className={styles.title}>{product.title}</p>
+        <p className={styles.price}>{`$${product.price}`}</p>
       </div>
-      <div>
+      <div className={styles.container}>
         <Button
           name={toggleCartButton ? "Add to Cart" : "Remove from Cart"}
           onClick={() => {

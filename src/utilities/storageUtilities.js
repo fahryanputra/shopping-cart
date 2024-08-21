@@ -20,9 +20,17 @@ function totalPriceFromStorage() {
   return total;
 }
 
+function addQuantityAndTotalPrice(key, product, quantity, total) {
+  product.quantity = quantity;
+  product.total = total;
+
+  return addToStorage(key, product);
+}
+
 export {
   addToStorage,
   getFromStorage,
   removeFromStorage,
   totalPriceFromStorage,
+  addQuantityAndTotalPrice,
 };

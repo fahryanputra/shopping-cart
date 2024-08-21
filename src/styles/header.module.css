@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-bottom: 2vh;
+}
+
+.title-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1vh;
+}
+
+.title-container .icon {
+  border-radius: 50%;
+  border: 1px black solid;
+  height: 5vh;
+  width: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+}

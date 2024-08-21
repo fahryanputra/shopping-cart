@@ -1,9 +1,8 @@
+import styles from "styles/searchBar.module.css";
+
 function SearchBar({ id, setSearchValue }) {
   return (
     <>
-      <label htmlFor={id}>
-        <span>search</span>
-      </label>
       <input
         id={id}
         type="text"

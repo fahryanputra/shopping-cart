@@ -1,13 +1,12 @@
 import Banner from "components/pages/shop/Banner";
 import Products from "components/pages/shop/Products";
+import styles from "styles/content.module.css";
 
 function Content({ searchValue }) {
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <Banner imgUrl={"#"} />
-      </div>
-      <div>
         <Products searchValue={searchValue} />
       </div>
     </>

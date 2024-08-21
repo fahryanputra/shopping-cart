@@ -1,0 +1,10 @@
+.search-container {
+  width: 75%;
+}
+
+.link-container {
+  margin-left: auto;
+  display: flex;
+  justify-content: end;
+  gap: 1vh;
+}
