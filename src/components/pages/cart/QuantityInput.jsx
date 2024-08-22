@@ -1,4 +1,5 @@
 import Button from "components/Button";
+import styles from "styles/cart/quantity.module.css";
 
 function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
   function handleAdd() {
@@ -17,19 +18,22 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
 
   return (
     <>
-      {productQuantity > 0 ? (
-        <Button name={"-"} onClick={handleSubtract} />
-      ) : (
-        <Button name={"x"} onClick={onRemove} />
-      )}
-      <input
-        type="number"
-        value={productQuantity}
-        min={0}
-        step={1}
-        onChange={handleChange}
-      />
-      <Button name={"+"} onClick={handleAdd} />
+      <div className={styles.container}>
+        {productQuantity > 0 ? (
+          <Button name={"-"} onClick={handleSubtract} />
+        ) : (
+          <Button name={"x"} onClick={onRemove} />
+        )}
+        <input
+          className={styles.quantity}
+          type="number"
+          value={productQuantity}
+          min={0}
+          step={1}
+          onChange={handleChange}
+        />
+        <Button name={"+"} onClick={handleAdd} />
+      </div>
     </>
   );
 }

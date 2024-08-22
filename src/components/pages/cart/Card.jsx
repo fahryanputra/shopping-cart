@@ -6,6 +6,7 @@ import {
   getFromStorage,
   removeFromStorage,
 } from "utilities/storageUtilities";
+import styles from "styles/cart/card.module.css";
 
 function Card({ productId, onCalculateTotal, onRemove }) {
   const product = getFromStorage(productId);
@@ -29,20 +30,24 @@ function Card({ productId, onCalculateTotal, onRemove }) {
 
   return (
     <>
-      <img src={product.image} alt={product.title} />
-      <p>{product.title}</p>
-      <p>{`$${product.price.toFixed(2)}`}</p>
-      <div>
-        <p>Quantity</p>
-        <QuantityInput
-          productQuantity={productQuantity}
-          setProductQuantity={setProductQuantity}
-          onRemove={handleRemove}
-        />
-        <Button name={"remove"} onClick={handleRemove} />
-      </div>
-      <div>
-        <p>{`$${totalPrice.toFixed(2)}`}</p>
+      <div className={styles["card-container"]}>
+        <img src={product.image} alt={product.title} />
+        <div className={styles.description}>
+          <p>{product.title}</p>
+          <div className={styles["price-container"]}>
+            <p>{`$${totalPrice.toFixed(2)}`}</p>
+            <div className={styles.quantity}>
+              <QuantityInput
+                productQuantity={productQuantity}
+                setProductQuantity={setProductQuantity}
+                onRemove={handleRemove}
+              />
+            </div>
+          </div>
+          <div className={styles["remove-container"]}>
+            <Button name={"remove"} onClick={handleRemove} />
+          </div>
+        </div>
       </div>
     </>
   );

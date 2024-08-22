@@ -1,5 +1,5 @@
 import CardDescription from "components/pages/shop/CardDescription";
-import styles from "styles/productCard.module.css";
+import styles from "styles/shop/productCard.module.css";
 
 function Card({ imgUrl, product }) {
   return (

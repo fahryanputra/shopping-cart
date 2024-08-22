@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "./Card";
 import Button from "components/Button";
 import { totalPriceFromStorage } from "utilities/storageUtilities";
+import styles from "styles/cart/cart.module.css";
 
 function Cart() {
   const [totalBill, setTotalBill] = useState(totalPriceFromStorage());
@@ -19,22 +20,26 @@ function Cart() {
 
   return (
     <>
-      <div>
-        {!isStorageEmpty &&
-          Object.keys(localStorage).map((element) => (
-            <Card
-              key={element}
-              productId={element}
-              onCalculateTotal={handleCalculateTotal}
-              onRemove={handleRemove}
-            />
-          ))}
+      <div className={styles.container}>
+        <div className={styles["card-container"]}>
+          {!isStorageEmpty &&
+            Object.keys(localStorage).map((element) => (
+              <Card
+                key={element}
+                productId={element}
+                onCalculateTotal={handleCalculateTotal}
+                onRemove={handleRemove}
+              />
+            ))}
+        </div>
+        <div className={styles["checkout-container"]}>
+          <p>Total Price</p>
+          <div className={styles.checkout}>
+            <p>{`$${totalBill.toFixed(2)}`}</p>
+            <Button name={"Checkout"} />
+          </div>
+        </div>
       </div>
-      <div>
-        <p>Total Bill</p>
-        <p>{`$${totalBill.toFixed(2)}`}</p>
-      </div>
-      <Button name={"Checkout"} />
     </>
   );
 }

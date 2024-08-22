@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin-bottom: 5vh;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.checkout-container p {
+  margin: 1vh;
+}
+
+.checkout-container .checkout {
+  display: flex;
+  align-items: center;
+}
+
+.checkout-container .checkout button {
+  margin-left: auto;
+}

@@ -1,4 +1,4 @@
-import styles from "styles/banner.module.css";
+import styles from "styles/shop/banner.module.css";
 
 function Banner({ imgUrl }) {
   return (

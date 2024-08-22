@@ -1,6 +1,6 @@
 import Card from "components/pages/shop/Card";
 import useFakeStoreAPI from "hooks/useFakeStoreAPI";
-import styles from "styles/products.module.css";
+import styles from "styles/shop/products.module.css";
 
 function Products({ searchValue }) {
   function displayProductCard(product) {

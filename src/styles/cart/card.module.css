@@ -1,0 +1,40 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2vh;
+  padding: 1vh;
+  border: solid 1px black;
+}
+
+.card-container img {
+  width: 100%;
+}
+
+.card-container .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+}
+
+.card-container .description p {
+  margin: 1vh;
+}
+
+.card-container .description .remove-container {
+  align-self: end;
+  margin-top: 2vh;
+  flex: 0;
+  max-width: fit-content;
+}
+
+.card-container .description .price-container {
+  display: flex;
+  align-items: center;
+}
+
+.card-container .description .price-container .quantity {
+  margin-left: auto;
+}

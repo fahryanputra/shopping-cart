@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import { useState } from "react";
 import { addToStorage, removeFromStorage } from "utilities/storageUtilities";
-import styles from "styles/cardDescription.module.css";
+import styles from "styles/shop/cardDescription.module.css";
 
 function CardDescription({ product }) {
   const isStorageEmpty = localStorage.length < 1;
