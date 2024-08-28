@@ -2,7 +2,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2vh;
-  margin-bottom: 2vh;
 }
 
 .title-container {
@@ -21,16 +20,4 @@ header {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-
-.search-container {
-  width: 50%;
-  margin-left: auto;
-}
-
-.navbar {
-  display: flex;
-  width: 100%;
-  justify-content: start;
-  align-items: center;
 }

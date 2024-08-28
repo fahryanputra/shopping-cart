@@ -1,10 +1,11 @@
 import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Card from "components/pages/shop/Card";
+import product from "./product";
 
 describe("Card component", () => {
   it("renders on screen", () => {
-    render(<Card imgUrl={"#"} />);
+    render(<Card imgUrl={"#"} product={product} />);
 
     const image = screen.getByAltText("cardImage");
 

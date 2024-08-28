@@ -1,11 +1,6 @@
-import SearchBar from "components/pages/shop/SearchBar";
-import { useLocation } from "react-router-dom";
-import Navigation from "components/Navigation";
 import styles from "styles/header.module.css";
 
-function Header({ title, setSearchValue }) {
-  const location = useLocation().pathname;
-
+function Header({ title }) {
   return (
     <>
       <header>
@@ -14,14 +9,6 @@ function Header({ title, setSearchValue }) {
             <img src="#" alt="logo" />
           </div>
           <p>{title}</p>
-          <div className={styles["search-container"]}>
-            {location === "/" && (
-              <SearchBar id={"search"} setSearchValue={setSearchValue} />
-            )}
-          </div>
-        </div>
-        <div className={styles.navbar}>
-          <Navigation setSearchValue={setSearchValue} />
         </div>
       </header>
     </>
