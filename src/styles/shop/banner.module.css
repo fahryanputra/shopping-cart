@@ -7,3 +7,9 @@
   height: 30vh;
   border: 1px black solid;
 }
+
+@media (min-width: 1024px) {
+  .banner-container {
+    height: 50vh;
+  }
+}

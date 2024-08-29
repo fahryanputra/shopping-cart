@@ -29,3 +29,18 @@
 .checkout-container .checkout button {
   margin-left: auto;
 }
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 10vh;
+    align-items: center;
+  }
+
+  .card-container {
+    width: 50%;
+  }
+
+  .checkout-container {
+    width: 50%;
+  }
+}
