@@ -29,7 +29,8 @@ function CardDescription({ product }) {
       </div>
       <div className={styles.container}>
         <Button
-          name={toggleCartButton ? "Add to Cart" : "Remove from Cart"}
+          className={toggleCartButton ? "cart-add" : "cart-remove"}
+          name={toggleCartButton ? <p>Add to Cart</p> : <p>Remove from Cart</p>}
           onClick={() => {
             onClick();
           }}

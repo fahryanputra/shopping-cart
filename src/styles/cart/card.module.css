@@ -5,7 +5,8 @@
   justify-content: center;
   column-gap: 2vh;
   padding: 1vh;
-  border: solid 1px black;
+  border-radius: 2vh;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .card-container img {

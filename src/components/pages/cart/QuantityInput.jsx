@@ -20,7 +20,7 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
     <>
       <div className={styles.container}>
         {productQuantity > 0 ? (
-          <Button name={"-"} onClick={handleSubtract} />
+          <Button className={"counter"} name={"-"} onClick={handleSubtract} />
         ) : (
           <Button name={"x"} onClick={onRemove} />
         )}
@@ -32,7 +32,7 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
           step={1}
           onChange={handleChange}
         />
-        <Button name={"+"} onClick={handleAdd} />
+        <Button className={"counter"} name={"+"} onClick={handleAdd} />
       </div>
     </>
   );

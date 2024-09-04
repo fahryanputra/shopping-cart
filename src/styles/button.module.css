@@ -1,0 +1,31 @@
+button {
+  border: none;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+.cart-remove,
+.item-remove {
+  background-color: #ef4444;
+}
+
+.cart-add,
+.checkout {
+  background-color: #22c55e;
+}
+
+.counter {
+  background-color: #e5e5e5;
+  border-radius: 0;
+}
+
+.item-remove {
+  width: 7vh;
+}
+
+.checkout {
+  height: 5vh;
+}

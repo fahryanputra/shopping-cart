@@ -45,7 +45,11 @@ function Card({ productId, onCalculateTotal, onRemove }) {
             </div>
           </div>
           <div className={styles["remove-container"]}>
-            <Button name={"remove"} onClick={handleRemove} />
+            <Button
+              className={"item-remove"}
+              name={<span class="material-symbols-rounded">delete</span>}
+              onClick={handleRemove}
+            />
           </div>
         </div>
       </div>

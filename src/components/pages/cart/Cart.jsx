@@ -36,7 +36,7 @@ function Cart() {
           <p>Total Price</p>
           <div className={styles.checkout}>
             <p>{`$${totalBill.toFixed(2)}`}</p>
-            <Button name={"Checkout"} />
+            <Button className={"checkout"} name={"Checkout"} />
           </div>
         </div>
       </div>

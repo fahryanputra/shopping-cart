@@ -1,7 +1,14 @@
-function Button({ name, onClick }) {
+import styles from "styles/button.module.css";
+
+function Button({ className, name, onClick }) {
   return (
     <>
-      <button onClick={onClick}>{name}</button>
+      <button
+        className={className ? styles[`${className}`] : ""}
+        onClick={onClick}
+      >
+        {name}
+      </button>
     </>
   );
 }
