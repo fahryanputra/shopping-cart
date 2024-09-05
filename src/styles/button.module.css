@@ -7,6 +7,12 @@ button {
   padding: 1vh;
 }
 
+button:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+
 .cart-remove,
 .item-remove {
   background-color: #ef4444;

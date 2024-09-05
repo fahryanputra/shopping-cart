@@ -1,7 +1,12 @@
 import Button from "components/Button";
 import styles from "styles/cart/quantity.module.css";
 
-function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
+function QuantityInput({
+  formId,
+  productQuantity,
+  setProductQuantity,
+  onRemove,
+}) {
   function handleAdd() {
     return setProductQuantity(+productQuantity + 1);
   }
@@ -25,6 +30,7 @@ function QuantityInput({ productQuantity, setProductQuantity, onRemove }) {
           <Button name={"x"} onClick={onRemove} />
         )}
         <input
+          id={formId}
           className={styles.quantity}
           type="number"
           value={productQuantity}

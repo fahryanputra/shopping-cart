@@ -38,6 +38,8 @@ function Card({ productId, onCalculateTotal, onRemove }) {
             <p>{`$${totalPrice.toFixed(2)}`}</p>
             <div className={styles.quantity}>
               <QuantityInput
+                key={productId}
+                formId={productId}
                 productQuantity={productQuantity}
                 setProductQuantity={setProductQuantity}
                 onRemove={handleRemove}
@@ -47,7 +49,7 @@ function Card({ productId, onCalculateTotal, onRemove }) {
           <div className={styles["remove-container"]}>
             <Button
               className={"item-remove"}
-              name={<span class="material-symbols-rounded">delete</span>}
+              name={<span className="material-symbols-rounded">delete</span>}
               onClick={handleRemove}
             />
           </div>
