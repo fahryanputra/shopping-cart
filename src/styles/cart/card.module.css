@@ -39,3 +39,7 @@
 .card-container .description .price-container .quantity {
   margin-left: auto;
 }
+
+.price {
+  font-weight: 600;
+}

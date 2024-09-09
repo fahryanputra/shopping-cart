@@ -9,13 +9,23 @@ button {
 
 button:hover {
   cursor: pointer;
-  -webkit-filter: brightness(70%);
-  filter: brightness(70%);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 .cart-remove,
 .item-remove {
+  background-color: white;
+  border: 2px #ef4444 solid;
+}
+
+.cart-remove:hover,
+.item-remove:hover {
   background-color: #ef4444;
+  color: white;
 }
 
 .cart-add,

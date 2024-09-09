@@ -23,11 +23,11 @@ function CardDescription({ product }) {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={`${styles.container} montserrat-regular`}>
         <p className={styles.title}>{product.title}</p>
         <p className={styles.price}>{`$${product.price}`}</p>
       </div>
-      <div className={styles.container}>
+      <div className={`${styles.container} poppins-regular`}>
         <Button
           className={toggleCartButton ? "cart-add" : "cart-remove"}
           name={toggleCartButton ? <p>Add to Cart</p> : <p>Remove from Cart</p>}

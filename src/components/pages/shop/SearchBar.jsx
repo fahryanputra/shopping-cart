@@ -6,7 +6,7 @@ function SearchBar({ id, setSearchValue }) {
       <div className={styles.container}>
         <input
           id={id}
-          className={styles.search}
+          className={`${styles.search} poppins-regular`}
           type="text"
           placeholder="Search"
           onChange={(e) => setSearchValue(e.target.value)}

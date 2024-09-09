@@ -6,10 +6,15 @@
 
 .container p {
   margin: 0.5vh;
+  font-size: 13px;
 }
 
 .title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.price {
+  font-weight: 600;
 }

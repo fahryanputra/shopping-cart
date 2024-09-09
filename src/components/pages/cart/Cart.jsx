@@ -32,10 +32,10 @@ function Cart() {
               />
             ))}
         </div>
-        <div className={styles["checkout-container"]}>
+        <div className={`${styles["checkout-container"]} montserrat-regular`}>
           <p>Total Price</p>
           <div className={styles.checkout}>
-            <p>{`$${totalBill.toFixed(2)}`}</p>
+            <p className={styles.total}>{`$${totalBill.toFixed(2)}`}</p>
             <Button className={"checkout"} name={"Checkout"} />
           </div>
         </div>

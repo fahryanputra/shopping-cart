@@ -13,11 +13,19 @@ header {
 
 .title-container .icon {
   border-radius: 50%;
-  border: 1px black solid;
   height: 5vh;
   width: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+.title-container .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.title-container p {
+  color: #15803d;
 }

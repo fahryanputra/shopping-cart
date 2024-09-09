@@ -3,6 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2vh;
+  gap: 5vh;
   padding: 2vh 0;
+}
+
+.link-container a {
+  text-decoration: none;
+  color: #525252;
+  font-size: 20px;
+}
+
+.link-container a:hover {
+  color: #22c55e;
 }

@@ -5,7 +5,10 @@
   overflow: hidden;
   width: 100%;
   height: 30vh;
-  border: 1px black solid;
+}
+
+.banner-container img {
+  width: 155%;
 }
 
 @media (min-width: 1024px) {

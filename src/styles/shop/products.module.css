@@ -5,6 +5,7 @@
   align-items: center;
   justify-items: center;
   gap: 1vh;
+  margin-bottom: 5vh;
 }
 
 @media (min-width: 1024px) {

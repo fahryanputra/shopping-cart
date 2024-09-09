@@ -32,10 +32,10 @@ function Card({ productId, onCalculateTotal, onRemove }) {
     <>
       <div className={styles["card-container"]}>
         <img src={product.image} alt={product.title} />
-        <div className={styles.description}>
+        <div className={`${styles.description} montserrat-regular`}>
           <p>{product.title}</p>
           <div className={styles["price-container"]}>
-            <p>{`$${totalPrice.toFixed(2)}`}</p>
+            <p className={styles.price}>{`$${totalPrice.toFixed(2)}`}</p>
             <div className={styles.quantity}>
               <QuantityInput
                 key={productId}

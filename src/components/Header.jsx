@@ -6,9 +6,14 @@ function Header({ title }) {
       <header>
         <div className={styles["title-container"]}>
           <div className={styles.icon}>
-            <img src="#" alt="logo" />
+            <img
+              width="96"
+              height="96"
+              src="https://img.icons8.com/color/96/shop.png"
+              alt="shop"
+            />{" "}
           </div>
-          <p>{title}</p>
+          <p className="poppins-regular">{title}</p>
         </div>
       </header>
     </>
